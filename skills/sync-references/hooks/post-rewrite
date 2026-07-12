@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+# post-rewrite — Syncs references after rebases/amends
+# Installed by: <skill-dir>/hooks/install.sh
+# Argument $1: rewrite type (rebase or amend)
+
+REWRITE_TYPE="$1"
+
+# Locate auto-sync.sh via the path recorded at install time
+SKILL_ROOT=$(git config --get sync-refs.skill-root 2>/dev/null)
+AUTO_SYNC="$SKILL_ROOT/scripts/auto-sync.sh"
+
+# Verify the script exists
+if [[ ! -x "$AUTO_SYNC" ]]; then
+  echo "⚠ sync-references hook: auto-sync.sh not found (check 'git config sync-refs.skill-root')" >&2
+  exit 0  # Don't fail the rewrite
+fi
+
+# Only run auto-sync for rebases (amend is less critical)
+if [[ "$REWRITE_TYPE" == "rebase" ]]; then
+  "$AUTO_SYNC" --force
+fi
+
+# Never fail the rewrite even if auto-sync returns an error
+exit 0

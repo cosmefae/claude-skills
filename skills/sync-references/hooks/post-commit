@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+# post-commit — Detects renamed/moved .md files and syncs references
+# Installed by: <skill-dir>/hooks/install.sh
+
+# Locate auto-sync.sh via the path recorded at install time
+SKILL_ROOT=$(git config --get sync-refs.skill-root 2>/dev/null)
+AUTO_SYNC="$SKILL_ROOT/scripts/auto-sync.sh"
+
+# Verify the script exists
+if [[ ! -x "$AUTO_SYNC" ]]; then
+  echo "⚠ sync-references hook: auto-sync.sh not found (check 'git config sync-refs.skill-root')" >&2
+  exit 0  # Don't fail the commit
+fi
+
+# Run auto-sync (mode configured via git config)
+"$AUTO_SYNC"
+
+# Never fail the commit even if auto-sync returns an error
+exit 0

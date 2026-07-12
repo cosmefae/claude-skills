@@ -1,0 +1,72 @@
+{
+  "name": "claude-skills",
+  "owner": "cosmefae",
+  "plugins": [
+    {
+      "name": "screen-contract",
+      "type": "skill",
+      "path": "skills/screen-contract",
+      "description": "Transforms any design input (Figma frame, screenshot, or text brief) into a structural JSON contract before any code generation."
+    },
+    {
+      "name": "write-handoff",
+      "type": "skill",
+      "path": "skills/write-handoff",
+      "description": "Writes a HANDOFF.md for the current task with state, file references, verification commands, and next steps."
+    },
+    {
+      "name": "commit-guided",
+      "type": "skill",
+      "path": "skills/commit-guided",
+      "description": "Universal guided git workflow to validate, commit, and open a PR with Conventional Commits."
+    },
+    {
+      "name": "sync-references",
+      "type": "skill",
+      "path": "skills/sync-references",
+      "description": "Audits, relinks, and synchronizes documentation references (README, llms.txt, AGENTS.md, SKILL.md, CHANGELOG.md) in a project."
+    },
+    {
+      "name": "figma-shadcn-hygiene",
+      "type": "skill",
+      "path": "skills/figma-shadcn-hygiene",
+      "description": "Figma-only structural hygiene pass: naming, taxonomy, auto layout, and token gaps, ready for handoff."
+    },
+    {
+      "name": "figma-shadcn-visual-match",
+      "type": "skill",
+      "path": "skills/figma-shadcn-visual-match",
+      "description": "Figma → shadcn → code pipeline with a visual fidelity gate: implements, screenshots, diffs, and iterates until approval."
+    },
+    {
+      "name": "career-boost",
+      "type": "skill",
+      "path": "skills/career-boost",
+      "description": "Diagnoses and rewrites resumes/LinkedIn profiles for ATS and recruiter impact, with fit scoring against a target job."
+    },
+    {
+      "name": "crisis-investing",
+      "type": "skill",
+      "path": "skills/crisis-investing",
+      "description": "Builds and scores investment strategies for global crisis scenarios (wars, pandemics, recessions, tail-risk events)."
+    },
+    {
+      "name": "standardize-md-skills",
+      "type": "skill",
+      "path": "skills/standardize-md-skills",
+      "description": "Audits and standardizes SKILL.md and project MD files against Anthropic conventions, scoped to an explicit target directory."
+    },
+    {
+      "name": "ai-daily-brief",
+      "type": "skill",
+      "path": "skills/ai-daily-brief",
+      "description": "Generates a daily brief of top AI-world news, deduped across a curated source list."
+    },
+    {
+      "name": "security-auditor",
+      "type": "agent",
+      "path": "agents/security-auditor.md",
+      "description": "Read-only audit of a Claude Code environment: secrets, permissions, config hygiene."
+    }
+  ]
+}

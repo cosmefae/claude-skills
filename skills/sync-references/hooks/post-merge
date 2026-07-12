@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+# post-merge — Syncs references after pulls/merges
+# Installed by: <skill-dir>/hooks/install.sh
+
+# Locate auto-sync.sh via the path recorded at install time
+SKILL_ROOT=$(git config --get sync-refs.skill-root 2>/dev/null)
+AUTO_SYNC="$SKILL_ROOT/scripts/auto-sync.sh"
+
+# Verify the script exists
+if [[ ! -x "$AUTO_SYNC" ]]; then
+  echo "⚠ sync-references hook: auto-sync.sh not found (check 'git config sync-refs.skill-root')" >&2
+  exit 0  # Don't fail the merge
+fi
+
+# Run auto-sync with --force (always runs after a merge)
+"$AUTO_SYNC" --force
+
+# Never fail the merge even if auto-sync returns an error
+exit 0
