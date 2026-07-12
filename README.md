@@ -12,7 +12,26 @@ Structure:
 - `.claude-plugin/marketplace.json` — plugin catalog
 - `LICENSE` — MIT
 
-Install: `/plugin marketplace add cosmefae/claude-skills`
+## Install
+
+Whole marketplace, inside Claude Code:
+```
+/plugin marketplace add cosmefae/claude-skills
+```
+
+One skill or agent at a time, with the [Vercel Labs `skills` CLI](https://github.com/vercel-labs/skills) — works in Claude Code, Codex, Cursor, and anywhere else the Agent Skills spec is supported:
+```
+npx skills add cosmefae/claude-skills/skills/<skill-name>
+npx skills add cosmefae/claude-skills/agents/<agent-name>
+```
+Example: `npx skills add cosmefae/claude-skills/skills/screen-contract`
+
+Or with GitHub CLI's native `gh skill` (v2.90.0+), which lets you pin a commit hash for reproducibility:
+```
+gh skill install cosmefae/claude-skills/skills/<skill-name>
+```
+
+Each skill/agent link in the tables below points straight to its folder, so you can grab the exact path for either command.
 
 ## Provenance
 
@@ -25,19 +44,19 @@ Every `SKILL.md`/agent `.md` in this repo carries a `Provenance:` line in its fr
 
 | Skill | Description |
 |---|---|
-| `screen-contract` | Turns a Figma frame, screenshot, or brief into a structural JSON contract before any code generation — prevents visual drift and invented tokens/components. |
-| `write-handoff` | Writes a concise HANDOFF.md for the current task: state, file refs, verify commands, next steps. |
-| `commit-guided` | Guided git workflow — validate, commit with Conventional Commits, open a PR. |
-| `sync-references` | Audits and syncs documentation references (README, llms.txt, AGENTS.md, SKILL.md, CHANGELOG.md) — broken links, orphan files, skill-index drift. |
-| `figma-shadcn-hygiene` | Figma-only structural hygiene pass: naming, taxonomy, auto layout, token gaps. Produces a Hygiene Report for handoff. |
-| `figma-shadcn-visual-match` | Figma → shadcn → code with a visual fidelity gate: implements, screenshots both sides, classifies diffs, iterates to approval. |
-| `career-boost` | Resume/LinkedIn diagnosis and rewrite for ATS and recruiters, with fit scoring against a target job. |
-| `crisis-investing` | Builds and scores investment strategies for global crisis scenarios (wars, pandemics, recessions, tail-risk events). |
-| `standardize-md-skills` | Audits and standardizes SKILL.md/project MD files against Anthropic conventions — always scoped to an explicit target directory. |
-| `ai-daily-brief` | Generates a daily brief of top AI-world news, deduped across a curated, user-editable source list. |
+| [`screen-contract`](skills/screen-contract) | Turns a Figma frame, screenshot, or brief into a structural JSON contract before any code generation — prevents visual drift and invented tokens/components. |
+| [`write-handoff`](skills/write-handoff) | Writes a concise HANDOFF.md for the current task: state, file refs, verify commands, next steps. |
+| [`commit-guided`](skills/commit-guided) | Guided git workflow — validate, commit with Conventional Commits, open a PR. |
+| [`sync-references`](skills/sync-references) | Audits and syncs documentation references (README, llms.txt, AGENTS.md, SKILL.md, CHANGELOG.md) — broken links, orphan files, skill-index drift. |
+| [`figma-shadcn-hygiene`](skills/figma-shadcn-hygiene) | Figma-only structural hygiene pass: naming, taxonomy, auto layout, token gaps. Produces a Hygiene Report for handoff. |
+| [`figma-shadcn-visual-match`](skills/figma-shadcn-visual-match) | Figma → shadcn → code with a visual fidelity gate: implements, screenshots both sides, classifies diffs, iterates to approval. |
+| [`career-boost`](skills/career-boost) | Resume/LinkedIn diagnosis and rewrite for ATS and recruiters, with fit scoring against a target job. |
+| [`crisis-investing`](skills/crisis-investing) | Builds and scores investment strategies for global crisis scenarios (wars, pandemics, recessions, tail-risk events). |
+| [`standardize-md-skills`](skills/standardize-md-skills) | Audits and standardizes SKILL.md/project MD files against Anthropic conventions — always scoped to an explicit target directory. |
+| [`ai-daily-brief`](skills/ai-daily-brief) | Generates a daily brief of top AI-world news, deduped across a curated, user-editable source list. |
 
 ## Agents
 
 | Agent | Description |
 |---|---|
-| `security-auditor` | Read-only security audit of a Claude Code environment — secrets, permissions, config hygiene. |
+| [`security-auditor`](agents/security-auditor.md) | Read-only security audit of a Claude Code environment — secrets, permissions, config hygiene. |
