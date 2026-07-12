@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# post-commit — Detects renamed/moved .md files and syncs references
+# post-commit: Detects renamed/moved .md files and syncs references
 # Installed by: <skill-dir>/hooks/install.sh
 
 # Locate auto-sync.sh via the path recorded at install time

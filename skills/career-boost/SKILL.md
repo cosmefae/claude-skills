@@ -2,14 +2,14 @@
 name: career-boost
 description: Transforms resumes and professional profiles into maximum-impact documents, optimized for ATS and recruiters. Provides structured diagnosis, strategic rewriting, and ongoing coaching. Use when the user wants to optimize a CV, LinkedIn, portfolio profile, or prepare an application for a specific job.
 allowed-tools: Read, Glob, Bash, WebFetch, WebSearch
-Provenance: adapted from a private workspace skill — [cosmefae](https://hellofae.com)
+Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
 ---
 
-# Career Boost — Skill
+# Career Boost: Skill
 
 ## Goal
 
-Maximize the candidate's employability and salary negotiation power through honest diagnosis, strategic document optimization, and results-oriented coaching. Don't produce generic documents — produce application weapons.
+Maximize the candidate's employability and salary negotiation power through honest diagnosis, strategic document optimization, and results-oriented coaching. Don't produce generic documents. Produce application weapons.
 
 ## Scope
 
@@ -31,19 +31,19 @@ Maximize the candidate's employability and salary negotiation power through hone
 
 ## Workflow
 
-### Phase 1 — Intake and context
+### Phase 1: Intake and context
 
 Before any analysis, collect:
 
-1. **Current document** — resume (PDF/MD/pasted text), LinkedIn URL, or portfolio
-2. **Target** — specific job (URL or pasted JD), target industry, desired level, desired salary range
-3. **Career context** — years of experience, most significant recent achievement, transition narrative (if any)
-4. **Target country/region** — format varies: BR curriculum (optional photo, objective), US resume (no photo, no objective), European CV (more detailed, Europass)
+1. **Current document**: resume (PDF/MD/pasted text), LinkedIn URL, or portfolio
+2. **Target**: specific job (URL or pasted JD), target industry, desired level, desired salary range
+3. **Career context**: years of experience, most significant recent achievement, transition narrative (if any)
+4. **Target country/region**: format varies: BR curriculum (optional photo, objective), US resume (no photo, no objective), European CV (more detailed, Europass)
 
 If the user hasn't provided a document: ask directly before continuing.
 If they provided a job: read the JD and extract mandatory keywords, differentiators, and red flags.
 
-### Phase 2 — Structured diagnosis
+### Phase 2: Structured diagnosis
 
 Evaluate the document across 6 dimensions with a 0–10 score:
 
@@ -62,40 +62,40 @@ Identify the 3 most critical gaps blocking approval at screening stage.
 
 Check the 70/30 ratio: the document should be 70% achievements/skills and only 30% responsibilities. If inverted, flag it as a critical gap.
 
-### Phase 3 — Keyword extraction (if a job is provided)
+### Phase 3: Keyword extraction (if a job is provided)
 
 Classify JD keywords into three tiers:
 
-- **Mandatory** — appear multiple times or in must-have requirements; absence = automatic ATS rejection
-- **Differentiators** — appear in nice-to-have or preferred qualifications; presence = competitive advantage
-- **Red flags** — technologies/methodologies the candidate doesn't have that are central to the job
+- **Mandatory**: appear multiple times or in must-have requirements; absence = automatic ATS rejection
+- **Differentiators**: appear in nice-to-have or preferred qualifications; presence = competitive advantage
+- **Red flags**: technologies/methodologies the candidate doesn't have that are central to the job
 
 For each missing mandatory keyword: suggest where and how to naturally insert it into the document.
 
-### Phase 4 — Section rewriting
+### Phase 4: Section rewriting
 
 Prioritize by impact order:
 
-1. **Headline / Title** — one line, role + value proposition + differentiator
-2. **Summary** — 3–5 lines in the format: [Who I am] + [What I deliver] + [For whom] + [Proof]
-3. **Experience** — rewrite bullets in XYZ format: *Accomplishment X as measured by Y by doing Z*
+1. **Headline / Title**: one line, role + value proposition + differentiator
+2. **Summary**: 3-5 lines in the format: [Who I am] + [What I deliver] + [For whom] + [Proof]
+3. **Experience**: rewrite bullets in XYZ format: *Accomplishment X as measured by Y by doing Z*
    - Each bullet needs: strong verb + context + measurable result (or qualitative proxy if no data)
    - Maximum 5 bullets per role; prioritize the last 10 years
-   - Order bullets by impact, not chronology — best material on top
-4. **Skills / Competencies** — reorganize by relevance to the target; remove obvious skills (e.g. "Microsoft Word")
-5. **Education** — highlight only what's relevant; add recent courses if they strengthen the target
+   - Order bullets by impact, not chronology: best material on top
+4. **Skills / Competencies**: reorganize by relevance to the target; remove obvious skills (e.g. "Microsoft Word")
+5. **Education**: highlight only what's relevant; add recent courses if they strengthen the target
 
 **Variants to deliver:**
 
 At the end of the rewrite, generate three versions:
 
-- **Generic** — broad applications, no reference to a specific company/job; general industry keywords
-- **Tailored** — optimized for the provided JD; JD keywords naturally incorporated; maximum match
-- **LinkedIn** — headline (220 characters), About section (2600 characters), experience bullets adapted to social reading format
+- **Generic**: broad applications, no reference to a specific company/job; general industry keywords
+- **Tailored**: optimized for the provided JD; JD keywords naturally incorporated; maximum match
+- **LinkedIn**: headline (220 characters), About section (2600 characters), experience bullets adapted to social reading format
 
 If no JD was provided, deliver only Generic and LinkedIn.
 
-### Phase 5 — Fit Score (if a job is provided)
+### Phase 5: Fit Score (if a job is provided)
 
 Calculate and present:
 
@@ -107,20 +107,20 @@ Fit Score: XX/100
 ✗ Real gaps: [job requirements the candidate genuinely doesn't meet]
 
 Recommended pitch angle: [how to position strengths to offset the gaps]
-ATS rejection risk: [High / Medium / Low] — [reason]
+ATS rejection risk: [High / Medium / Low]: [reason]
 ```
 
-### Phase 6 — Coaching and action plan
+### Phase 6: Coaching and action plan
 
 At the end of each session, deliver:
 
-1. **Quick wins** — 3 immediate-impact changes the user can make in <30 min
+1. **Quick wins**: 3 immediate-impact changes the user can make in <30 min
 2. **30-day plan:**
    - Week 1–2: finalize resume, update LinkedIn, selectively enable "Open to Work" mode, request 2–3 strategic LinkedIn recommendations
    - Week 3–4: active applications (apply to 5–10 jobs/week with the tailored version), targeted networking (former colleagues, industry groups), request referrals before applying
-3. **Natural next steps** — offer: a personalized cover letter for the job, full LinkedIn optimization, or behavioral interview prep
+3. **Natural next steps**: offer: a personalized cover letter for the job, full LinkedIn optimization, or behavioral interview prep
 
-**Unblocking questions** — when the user doesn't have metrics, use:
+**Unblocking questions**: when the user doesn't have metrics, use:
 > "What was the state before you arrived? And after you left/implemented something?"
 > "How many people used what you built/led?"
 > "How much time/money did you save the team or company?"
@@ -133,7 +133,7 @@ At the end of each session, deliver:
 ### Diagnosis
 
 ```
-DIAGNOSIS — [Document name / date]
+DIAGNOSIS: [Document name / date]
 
 Overall score: X.X/10
 
@@ -144,10 +144,10 @@ Relevance:        X/10 | [1-line observation]
 Credibility:      X/10 | [1-line observation]
 Readability:      X/10 | [1-line observation]
 
-70/30 ratio: [OK / inverted — X% responsibilities, Y% achievements]
+70/30 ratio: [OK / inverted: X% responsibilities, Y% achievements]
 
 CRITICAL GAPS
-1. [Most severe gap — impact]
+1. [Most severe gap: impact]
 2. [Second gap]
 3. [Third gap]
 ```
@@ -163,7 +163,7 @@ AFTER: Restructured paid campaign pipeline (Google + Meta), reducing CPL by 34% 
 ### Fit Score (when a job is provided)
 
 ```
-FIT SCORE — [Company / Role]
+FIT SCORE: [Company / Role]
 
 Score: XX/100
 
@@ -178,35 +178,35 @@ Score: XX/100
   · [gap 1]
 
 Pitch angle: [direct text]
-ATS risk: [High/Medium/Low] — [reason]
+ATS risk: [High/Medium/Low]: [reason]
 ```
 
 ---
 
 ## Rewriting principles
 
-- **6-second rule** — recruiters do a first scan in ~6 seconds. Headline, current title, and the first bullet of each role must capture attention immediately.
-- **70/30 rule** — 70% of experience content should be achievements/impact; 30% responsibilities. The inverse = generic resume.
-- **Strong opening verbs** — Led, Built, Implemented, Reduced, Scaled, Automated, Negotiated, Launched, Turned around, Grew, Restructured — never "Responsible for" or "Helped"
-- **Numbers whenever possible** — %, $, x, users, months, NPS, churn — honest estimates > no data
-- **Specificity > generality** — "fashion e-commerce with 1.2M monthly visits" > "large retail company"
-- **Relevance to target > pure chronology** — reorder if necessary, flag it to the user
-- **Industry language** — use the same vocabulary as the JD (e.g. if the JD says "Go-to-Market", don't write "product launch")
-- **Format by geography** — BR curriculum accepts photo and objective; US resume includes neither; European CV is longer and more detailed
+- **6-second rule**: recruiters do a first scan in ~6 seconds. Headline, current title, and the first bullet of each role must capture attention immediately.
+- **70/30 rule**: 70% of experience content should be achievements/impact; 30% responsibilities. The inverse = generic resume.
+- **Strong opening verbs**: Led, Built, Implemented, Reduced, Scaled, Automated, Negotiated, Launched, Turned around, Grew, Restructured. Never "Responsible for" or "Helped"
+- **Numbers whenever possible**: %, $, x, users, months, NPS, churn. Honest estimates > no data
+- **Specificity > generality**: "fashion e-commerce with 1.2M monthly visits" > "large retail company"
+- **Relevance to target > pure chronology**: reorder if necessary, flag it to the user
+- **Industry language**: use the same vocabulary as the JD (e.g. if the JD says "Go-to-Market", don't write "product launch")
+- **Format by geography**: BR curriculum accepts photo and objective; US resume includes neither; European CV is longer and more detailed
 
 ---
 
 ## Decision heuristics
 
-**(H1) Caution** — Absent confirmatory data, never invent metrics. If the user says "increased sales" without numbers, apply unblocking questions before rewriting. Reasonable estimates confirmed by the user are valid.
+**(H1) Caution**: absent confirmatory data, never invent metrics. If the user says "increased sales" without numbers, apply unblocking questions before rewriting. Reasonable estimates confirmed by the user are valid.
 
-**(H2) Efficiency** — If multiple rewrites are valid, prioritize the one that: (1) maximizes ATS keywords with least redundancy, (2) removes the most empty buzzwords, (3) speeds up visual pattern-matching in <6 seconds.
+**(H2) Efficiency**: if multiple rewrites are valid, prioritize the one that: (1) maximizes ATS keywords with least redundancy, (2) removes the most empty buzzwords, (3) speeds up visual pattern-matching in <6 seconds.
 
-**(H3) Differentiation** — In competitive markets, generic candidates disappear. Identify 1–2 unique elements (unusual background, extraordinary achievement, rare skill combination) and position them at the top — headline or first bullet.
+**(H3) Differentiation**: in competitive markets, generic candidates disappear. Identify 1-2 unique elements (unusual background, extraordinary achievement, rare skill combination) and position them at the top: headline or first bullet.
 
-**(H4) Progressive Credibility** — Bullets ordered by impact, not by date. Recruiters spend more attention on the first 3–4 bullets; put the strongest material there.
+**(H4) Progressive Credibility**: bullets ordered by impact, not by date. Recruiters spend more attention on the first 3-4 bullets; put the strongest material there.
 
-**(H5) Adaptability** — No resume is final. Always generate a generic variant + tailored (if there's a JD) + LinkedIn. Tell the user versions should be customized per application.
+**(H5) Adaptability**: no resume is final. Always generate a generic variant + tailored (if there's a JD) + LinkedIn. Tell the user versions should be customized per application.
 
 ### Decision matrix
 
@@ -235,14 +235,14 @@ ATS risk: [High/Medium/Low] — [reason]
 Your resume has real potential, but it's leaving opportunities on the table.
 
 QUICK DIAGNOSIS:
-— 70% of bullets have no numbers (recruiters expect this)
-— Empty buzzwords: "proactive", "innovative", "results-driven"
-— Summary too generic to catch attention in 6 seconds
+- 70% of bullets have no numbers (recruiters expect this)
+- Empty buzzwords: "proactive", "innovative", "results-driven"
+- Summary too generic to catch attention in 6 seconds
 
 WHAT WE'LL DO:
-— Surface the quantifiable achievements hidden in your history
-— Position [X differentiator] as your rarest asset
-— Incorporate the keywords the ATS is currently rejecting
+- Surface the quantifiable achievements hidden in your history
+- Position [X differentiator] as your rarest asset
+- Incorporate the keywords the ATS is currently rejecting
 
 I need more context about [specific experience] before rewriting.
 What was the state before you arrived? And what changed after?

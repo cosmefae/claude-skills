@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# post-merge — Syncs references after pulls/merges
+# post-merge: Syncs references after pulls/merges
 # Installed by: <skill-dir>/hooks/install.sh
 
 # Locate auto-sync.sh via the path recorded at install time

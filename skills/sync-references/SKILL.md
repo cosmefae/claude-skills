@@ -1,8 +1,8 @@
 ---
 name: sync-references
-description: Audits, relinks, and synchronizes documentation references in a project — detecting broken links, stale paths, orphan files, llms.txt inconsistencies, skills-directory desync (skills folder vs README/SKILLS.md/llms.txt), READMEs, AGENTS.md, SKILL.md, HANDOFF.md, and CHANGELOG.md. Generates updated indexes and validates YAML frontmatter. Use when the user mentions "broken links", "relink docs", "update refs", "sync llms.txt", "index files", "document references", "tag files", "orphan files", "audit documentation", "validate llms.txt", or "sync skills".
+description: Audits, relinks, and synchronizes documentation references in a project; detecting broken links, stale paths, orphan files, llms.txt inconsistencies, skills-directory desync (skills folder vs README/SKILLS.md/llms.txt), READMEs, AGENTS.md, SKILL.md, HANDOFF.md, and CHANGELOG.md. Generates updated indexes and validates YAML frontmatter. Use when the user mentions "broken links", "relink docs", "update refs", "sync llms.txt", "index files", "document references", "tag files", "orphan files", "audit documentation", "validate llms.txt", or "sync skills".
 allowed-tools: Read, Grep, Glob, Write, Bash
-Provenance: adapted from a private workspace skill — [cosmefae](https://hellofae.com)
+Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
 ---
 
 # sync-references
@@ -23,7 +23,7 @@ Audits and synchronizes a project's documentation reference graph. Operates on M
 
 ## Configuration
 
-This skill defaults to scanning a project's `skills/` directory (auto-detected: tries `.claude/skills/`, then `.cursor/skills/`, then `skills/` at the project root, in that order — first one found wins). If your project uses a different convention, pass it explicitly: "sync references, skills are in `packages/*/skills/`".
+This skill defaults to scanning a project's `skills/` directory (auto-detected: tries `.claude/skills/`, then `.cursor/skills/`, then `skills/` at the project root, in that order; first one found wins). If your project uses a different convention, pass it explicitly: "sync references, skills are in `packages/*/skills/`".
 
 ## Workflow
 
@@ -35,7 +35,7 @@ Run the audit script against the project directory:
 zsh <skill-dir>/scripts/audit-refs.sh <project-root>
 ```
 
-Where `<skill-dir>` is wherever this skill is installed (e.g. `.claude/skills/sync-references`, `~/.claude/skills/sync-references`, or a project-local path) — resolve it relative to how the skill was invoked, don't assume a fixed location.
+Where `<skill-dir>` is wherever this skill is installed (e.g. `.claude/skills/sync-references`, `~/.claude/skills/sync-references`, or a project-local path). Resolve it relative to how the skill was invoked, don't assume a fixed location.
 
 The script returns:
 - **broken-links**: Markdown links with a non-existent target
@@ -83,7 +83,7 @@ updated: <YYYY-MM-DD>
 ---
 ```
 
-Don't overwrite existing frontmatter — only add missing fields.
+Don't overwrite existing frontmatter, only add missing fields.
 
 ### 5. CHANGELOG
 
@@ -107,24 +107,24 @@ When changes are applied, append an entry to `CHANGELOG.md`:
 Always deliver at the end:
 
 ```markdown
-## sync-references Report — <date>
+## sync-references Report: <date>
 
 **Project**: <root>
 **Files audited**: N
 **Issues found**: N
 
 ### Broken links fixed (N)
-- `file.md:12` — `../old/path` → `../correct/path`
+- `file.md:12`: `../old/path` → `../correct/path`
 
 ### Orphan files (N)
-- `docs/unreferenced-file.md` — suggestion: add to README.md#section
+- `docs/unreferenced-file.md`: suggestion: add to README.md#section
 
-### llms.txt — synchronized (N additions, N removals)
+### llms.txt: synchronized (N additions, N removals)
 - ➕ `docs/new.md`
 - ➖ `docs/deleted.md` (file no longer exists)
 
 ### Skill sync (N)
-- `skill-name` missing from `llms.txt` / `README.md` / `SKILLS.md` — suggested fix: …
+- `skill-name` missing from `llms.txt` / `README.md` / `SKILLS.md`: suggested fix: …
 
 ### Frontmatter injected (N)
 - `docs/file.md`

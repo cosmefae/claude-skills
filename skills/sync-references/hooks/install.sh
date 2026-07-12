@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# install.sh — Installs git hooks for automatic sync-references
+# install.sh: Installs git hooks for automatic sync-references
 # Usage: zsh <skill-dir>/hooks/install.sh
 
 setopt nullglob
@@ -22,7 +22,7 @@ HOOKS_DIR="$REPO_ROOT/.git/hooks"
 
 echo ""
 echo "${BLU}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RST}"
-echo "${BLU}  sync-references — Git Hooks Installation${RST}"
+echo "${BLU}  sync-references: Git Hooks Installation${RST}"
 echo "${BLU}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RST}"
 echo ""
 echo "📁 Repository: $REPO_ROOT"
@@ -136,7 +136,7 @@ if [[ $ALL_OK -eq 1 ]]; then
   echo "   ${BLU}tail -f .git/sync-refs.log${RST}"
   echo ""
 else
-  echo "${RED}❌ Installation failed — check errors above${RST}"
+  echo "${RED}❌ Installation failed: check errors above${RST}"
   exit 1
 fi
 

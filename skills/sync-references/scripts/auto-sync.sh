@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# auto-sync.sh — Detects .md changes and syncs references automatically
+# auto-sync.sh: Detects .md changes and syncs references automatically
 # Usage: zsh auto-sync.sh [--force]
 # Deps: zsh, git, audit-refs.sh
 
@@ -58,8 +58,8 @@ main() {
 
   # If no changes and not forced, skip
   if [[ -z "$md_changes" && $FORCE -eq 0 ]]; then
-    log "No .md changes detected — skipping sync"
-    [[ "$MODE" == "report" ]] && echo "✓ No .md changes — sync-references skipped"
+    log "No .md changes detected: skipping sync"
+    [[ "$MODE" == "report" ]] && echo "✓ No .md changes: sync-references skipped"
     exit 0
   fi
 
@@ -78,30 +78,30 @@ main() {
   case "$MODE" in
     silent)
       # Just log
-      log "Mode: silent — logging only"
+      log "Mode: silent: logging only"
       echo "$audit_output" >> "$LOG_FILE"
       [[ $audit_exit -ne 0 ]] && log "⚠ $audit_exit issues found (not auto-fixing in silent mode)"
       ;;
 
     report)
       # Show in the terminal
-      log "Mode: report — displaying output"
+      log "Mode: report: displaying output"
       echo "$audit_output"
       [[ $audit_exit -ne 0 ]] && echo "\n⚠ $audit_exit issues found. Run /sync-references to fix manually."
       ;;
 
     fix)
-      # Auto-fix (placeholder — implement fix logic)
-      log "Mode: fix — attempting auto-fix"
+      # Auto-fix (placeholder: implement fix logic)
+      log "Mode: fix: attempting auto-fix"
       echo "$audit_output"
 
       if [[ $audit_exit -ne 0 ]]; then
         echo "\n⚠ Auto-fix mode not implemented yet."
         echo "📝 Issues found: $audit_exit"
         echo "Run the '/sync-references' command to fix manually."
-        log "Auto-fix not implemented — user intervention required"
+        log "Auto-fix not implemented: user intervention required"
       else
-        echo "✅ No issues found — references already synchronized"
+        echo "✅ No issues found: references already synchronized"
         log "No issues found"
       fi
       ;;

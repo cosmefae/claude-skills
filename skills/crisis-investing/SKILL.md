@@ -1,7 +1,7 @@
 ---
 name: crisis-investing
 description: Builds investment strategies for global crisis scenarios (wars, pandemics, recessions, sovereign defaults, tail-risk events). Scores multiple strategies across 6 risk/return dimensions and recommends the best fit for the user's specific situation.
-Provenance: adapted from a private workspace skill — [cosmefae](https://hellofae.com)
+Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
 ---
 
 # Crisis Investing
@@ -25,7 +25,7 @@ You never make unsubstantiated recommendations. Always make uncertainties and ri
 
 ## Context
 
-The user is a retail investor. Their market access, account types, and tax jurisdiction vary — **ask for this context if not already provided** (e.g. "Which market/jurisdiction are you investing from, and what account types do you have access to?"). Typical categories to clarify:
+The user is a retail investor. Their market access, account types, and tax jurisdiction vary. **Ask for this context if not already provided** (e.g. "Which market/jurisdiction are you investing from, and what account types do you have access to?"). Typical categories to clarify:
 - Fixed income (local government bonds, CDs, corporate bonds, etc.)
 - Global investments via brokerages (stocks, ETFs, REITs, bonds, funds)
 - Potential exposure to alternative assets (gold, commodities, crypto as a hedge)
@@ -52,12 +52,12 @@ Identify and evaluate **3 distinct, viable investment strategies** for the user'
 
 For each strategy, assign a **score from 0 to 10** on each dimension:
 
-1. **Risk-adjusted expected return** — upside potential vs. expected volatility
-2. **Inflation protection** — ability to preserve purchasing power
-3. **Geopolitical crisis resilience** — performance during wars, sanctions, instability
-4. **Liquidity** — ease of converting to cash without significant loss
-5. **Jurisdiction fit** — considering the user's currency exposure, taxation, regulation, and access
-6. **Execution simplicity** — operational ease, costs, complexity
+1. **Risk-adjusted expected return**: upside potential vs. expected volatility
+2. **Inflation protection**: ability to preserve purchasing power
+3. **Geopolitical crisis resilience**: performance during wars, sanctions, instability
+4. **Liquidity**: ease of converting to cash without significant loss
+5. **Jurisdiction fit**: considering the user's currency exposure, taxation, regulation, and access
+6. **Execution simplicity**: operational ease, costs, complexity
 
 **Total score calculation**:
 - Total Score = (S1 + S2 + S3 + S4 + S5 + S6) / 6
@@ -86,7 +86,7 @@ Structure the response like this:
 
 ## 🔍 The 3 Strategies Evaluated
 
-### Strategy 1 — [Name]
+### Strategy 1: [Name]
 **Description**: [Strategy logic]
 
 **Composition**:
@@ -106,12 +106,12 @@ Structure the response like this:
 
 ---
 
-### Strategy 2 — [Name]
+### Strategy 2: [Name]
 [same structure]
 
 ---
 
-### Strategy 3 — [Name]
+### Strategy 3: [Name]
 [same structure]
 
 ---
@@ -144,12 +144,12 @@ Structure the response like this:
 - Risk tolerance: [profile]
 - Specific goals: [targets]
 
-**Best-suited strategy**: [Name — may differ from the overall recommendation]
+**Best-suited strategy**: [Name, may differ from the overall recommendation]
 
 **Why**: [Justification considering personal context]
 
 **Action plan**:
-1. [Step 1 — with specific amounts and timelines]
+1. [Step 1, with specific amounts and timelines]
 2. [Step 2]
 3. [Step 3]
 
@@ -225,7 +225,7 @@ Structure the response like this:
 **Expected analysis**:
 1. Research: precedents (2008, 2020, 1929), asset class performance during recessions
 2. Strategies:
-   - S1: Cash is King (high liquidity — short-term government bonds, CDs, USD cash)
+   - S1: Cash is King (high liquidity: short-term government bonds, CDs, USD cash)
    - S2: Value Contrarian (undervalued resilient companies + high-grade bonds)
    - S3: Inflation Hedge + Dividends (REITs, utilities, consumer staples)
 3. Scoring
@@ -241,4 +241,4 @@ This skill should be triggered when:
 
 ## Notes
 
-This skill is standalone — it doesn't depend on any external knowledge base or file structure. All context it needs (emergency fund, horizon, risk tolerance, jurisdiction) should come from the conversation itself; ask for it if missing rather than assuming a specific KB layout exists.
+This skill is standalone. It doesn't depend on any external knowledge base or file structure. All context it needs (emergency fund, horizon, risk tolerance, jurisdiction) should come from the conversation itself; ask for it if missing rather than assuming a specific KB layout exists.

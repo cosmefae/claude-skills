@@ -4,16 +4,16 @@ description: "Transforms any design input (Figma frame, screenshot, or text brie
 version: "1.0"
 allowed-tools: [Read, mcp__*]
 tags: [design-system, contract, pre-generation, consistency, figma]
-Provenance: adapted from a private workspace skill — [cosmefae](https://hellofae.com)
+Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
 ---
 
 # Skill: screen-contract
 
 Converts any design input (Figma, screenshot, or brief) into a structural JSON contract that constrains and guides code generation, preventing visual drift and invented tokens or components outside the project's design system.
 
-> **Core rule:** Never generate UI directly from an image or description without first producing a structural contract. The contract is a human checkpoint — the model presents it, the user confirms it, then generation proceeds.
+> **Core rule:** Never generate UI directly from an image or description without first producing a structural contract. The contract is a human checkpoint. The model presents it, the user confirms it, then generation proceeds.
 
-This skill is **standalone**: it generates the contract and stops there. It does not assume or invoke other skills. If your workflow has a brainstorm step before and a code-generation step after, wire this skill in manually — there is no implicit coupling.
+This skill is **standalone**: it generates the contract and stops there. It does not assume or invoke other skills. If your workflow has a brainstorm step before and a code-generation step after, wire this skill in manually; there is no implicit coupling.
 
 ## When to use
 
@@ -24,8 +24,8 @@ This skill is **standalone**: it generates the contract and stops there. It does
 
 ### When NOT to use
 
-- Validating already-generated code — use a quality-gate skill from your project
-- Reviewing standalone copy — use a copy-review skill from your project
+- Validating already-generated code: use a quality-gate skill from your project
+- Reviewing standalone copy: use a copy-review skill from your project
 - Committing changes
 
 ## Per-project configuration
@@ -43,14 +43,14 @@ This skill is design-system agnostic. Before first use in a project, create a `.
 }
 ```
 
-If `.screen-contract.config.json` doesn't exist, **ask the user** where the design system reference files live before proceeding — never assume paths or conventions from another project.
+If `.screen-contract.config.json` doesn't exist, **ask the user** where the design system reference files live before proceeding. Never assume paths or conventions from another project.
 
 ## Reference files (defined by the config above)
 
-- `design_system_doc` — semantic tokens, components, spacing, typography
-- `component_mapping_doc` — component catalog and Code Connect paths
-- `copy_rules_doc` — copy rules for validating extracted text
-- `tokens_source` — actual token values (reference, do not edit)
+- `design_system_doc`: semantic tokens, components, spacing, typography
+- `component_mapping_doc`: component catalog and Code Connect paths
+- `copy_rules_doc`: copy rules for validating extracted text
+- `tokens_source`: actual token values (reference, do not edit)
 
 ---
 
@@ -58,11 +58,11 @@ If `.screen-contract.config.json` doesn't exist, **ask the user** where the desi
 
 **Follow the steps in order. Do not skip steps.**
 
-### Step 0 — Load project configuration
+### Step 0: Load project configuration
 
 Read `.screen-contract.config.json` at the project root. If it doesn't exist, ask the user for the equivalent paths before continuing. Every step below references the files defined here.
 
-### Step 1 — Identify the input type
+### Step 1: Identify the input type
 
 Determine the origin of the received input:
 
@@ -76,11 +76,11 @@ If the type is ambiguous, ask the user before proceeding.
 
 ---
 
-### Step 2 — Extract regions, hierarchy, and real visual tokens
+### Step 2: Extract regions, hierarchy, and real visual tokens
 
 Split the screen into semantic regions. The goal is a structural description, not pixel-perfect.
 
-**For Figma input — call BOTH tools in parallel:**
+**For Figma input, call BOTH tools in parallel:**
 
 ```
 get_design_context(fileKey, nodeId)   → node hierarchy, reference code, screenshot
@@ -96,7 +96,7 @@ get_variable_defs(fileKey, nodeId)    → actual variable values (hex, font-fami
   "font/family/sans": "Inter"
 }
 ```
-These values feed the `visual_tokens.extracted` field in the contract. **Never assume values — always use what `get_variable_defs` returns.**
+These values feed the `visual_tokens.extracted` field in the contract. **Never assume values; always use what `get_variable_defs` returns.**
 
 Use the hierarchy from `get_design_context` to identify top-level regions (child frames, main groups). Prefer semantic names (`header`, `card-area`, `cta-area`) over literal Figma layer names.
 
@@ -111,10 +111,10 @@ Describe regions top to bottom following the visual structure:
 
 ```
 Regions identified:
-1. header — navigation with back button and title
-2. card-area — summary card with main data
-3. info-area — alert or context message
-4. cta-area — primary button fixed at the bottom
+1. header: navigation with back button and title
+2. card-area: summary card with main data
+3. info-area: alert or context message
+4. cta-area: primary button fixed at the bottom
 
 Tokens extracted (get_variable_defs):
 - font-family: Inter
@@ -125,7 +125,7 @@ Tokens extracted (get_variable_defs):
 
 ---
 
-### Step 2b — Analyze target file (when provided)
+### Step 2b: Analyze target file (when provided)
 
 If a target file was specified (e.g. existing HTML playground, React component):
 
@@ -147,9 +147,9 @@ If a target file was specified (e.g. existing HTML playground, React component):
 
 ---
 
-### Step 2c — Extract component anatomy
+### Step 2c: Extract component anatomy
 
-From the reference code returned by `get_design_context`, document the internal structure of the main components — not just the type, but the real visual hierarchy.
+From the reference code returned by `get_design_context`, document the internal structure of the main components, not just the type, but the real visual hierarchy.
 
 **Rule:** describe what you see in the code/node structure, not what you imagine. Use this format:
 
@@ -166,7 +166,7 @@ Register in `component_anatomy` in the contract. If the component is simple (no 
 
 ---
 
-### Step 3 — Map design system components
+### Step 3: Map design system components
 
 For each region, identify the corresponding component in the project's design system.
 
@@ -186,7 +186,7 @@ For each component:
 
 ---
 
-### Step 4 — Bind tokens
+### Step 4: Bind tokens
 
 For each region and component, list the design system tokens that will be used.
 
@@ -206,7 +206,7 @@ Consult `design_system_doc` and `tokens_source` (defined in the config) for corr
 
 ---
 
-### Step 5 — Extract content and states
+### Step 5: Extract content and states
 
 **Text:** Extract visible text (labels, CTAs, messages). **Emoji as an icon substitute is forbidden** in the `copy` or `content.texts` fields.
 
@@ -220,18 +220,18 @@ Consult `design_system_doc` and `tokens_source` (defined in the config) for corr
 
 ---
 
-### Step 6 — Register uncertainties
+### Step 6: Register uncertainties
 
-Explicitly list any detected ambiguity. **Never guess — register it in `uncertainties`.**
+Explicitly list any detected ambiguity. **Never guess; register it in `uncertainties`.**
 
 Examples of valid uncertainties:
 - "Header icon: use the Figma asset via MCP or the DS icon library?"
-- "Card error state: no spec found in the frame — assume DS default?"
-- "Spacing between card and CTA: no value identified in the node — use the DS default?"
+- "Card error state: no spec found in the frame, assume DS default?"
+- "Spacing between card and CTA: no value identified in the node, use the DS default?"
 
 ---
 
-### Step 7 — Assemble and present the contract
+### Step 7: Assemble and present the contract
 
 Generate the JSON contract object and a readable summary. **Wait for user confirmation before proceeding to code generation.**
 
@@ -338,11 +338,11 @@ Generate the JSON contract object and a readable summary. **Wait for user confir
   "constraints": [
     "Apply all visual_delta fixes before adding any new state or component",
     "No colors outside the design system's semantic tokens",
-    "No custom shadows — use only the defined shadow tokens",
+    "No custom shadows; use only the defined shadow tokens",
     "Reuse existing components before creating new ones",
     "Minimum touch target 44px on all interactive elements",
     "Copy follows the project's copy_rules_doc",
-    "Icons only as SVG/Figma MCP assets — never emoji",
+    "Icons only as SVG/Figma MCP assets; never emoji",
     "Explicit font-weight on typography classes"
   ],
   "uncertainties": [
@@ -357,13 +357,13 @@ Generate the JSON contract object and a readable summary. **Wait for user confir
 
 Present the contract in two blocks:
 
-### Block 1 — Readable summary
+### Block 1: Readable summary
 
 ```markdown
-## Screen Contract — [screen_name]
+## Screen Contract: [screen_name]
 
 **Purpose:** [purpose]
-**Source:** [source.type] — [source.ref]
+**Source:** [source.type]: [source.ref]
 **Layout:** [layout.type], base [breakpoint_base]
 
 ### Regions and components
@@ -407,7 +407,7 @@ default · loading · error
 Reply "ok" to confirm, or adjust the contract before proceeding.
 ```
 
-### Block 2 — Contract JSON
+### Block 2: Contract JSON
 
 The full JSON per the template above, for use by code generation.
 
@@ -427,12 +427,12 @@ Mandatory order:
 If `visual_delta` is empty, proceed directly to the functional items.
 
 ### What this skill NEVER does
-- Generate code — that's the responsibility of whoever consumes the contract, after confirmation
+- Generate code: that's the responsibility of whoever consumes the contract, after confirmation
 - Invent tokens that don't exist in `design_system_doc` or `tokens_source`
 - Create new components when an existing one covers the case
-- Skip the human checkpoint — always wait for confirmation before signaling the contract is ready
+- Skip the human checkpoint: always wait for confirmation before signaling the contract is ready
 - Assume token values without consulting `get_variable_defs` when a Figma URL is available
-- Assume config paths from another project — always read `.screen-contract.config.json` or ask
+- Assume config paths from another project: always read `.screen-contract.config.json` or ask
 
 ### What to do when the input is ambiguous
 - Register it in `uncertainties` instead of assuming

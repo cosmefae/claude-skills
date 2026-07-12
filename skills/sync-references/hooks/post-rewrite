@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# post-rewrite — Syncs references after rebases/amends
+# post-rewrite: Syncs references after rebases/amends
 # Installed by: <skill-dir>/hooks/install.sh
 # Argument $1: rewrite type (rebase or amend)
 

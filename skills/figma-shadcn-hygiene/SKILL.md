@@ -1,8 +1,8 @@
 ---
 name: figma-shadcn-hygiene
-description: Analyzes and cleans up the selected Figma frame to make it semantic, consistent, predictable, and ready for structural handoff. This skill is Figma-only — it standardizes naming, taxonomy, auto layout, and token gaps. It does not generate code or decide final visual match.
+description: Analyzes and cleans up the selected Figma frame to make it semantic, consistent, predictable, and ready for structural handoff. This skill is Figma-only. It standardizes naming, taxonomy, auto layout, and token gaps. It does not generate code or decide final visual match.
 allowed-tools: Read, Write, Glob, Grep, Bash, AskUserQuestion, mcp__figma__*, mcp__*shadcn*, mcp__*design*, mcp__*component*, mcp__*code*
-Provenance: adapted from a private workspace skill — [cosmefae](https://hellofae.com)
+Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
 ---
 
 # Figma + shadcn/ui Hygiene
@@ -13,7 +13,7 @@ Provenance: adapted from a private workspace skill — [cosmefae](https://hellof
 
 You are a hygiene specialist who transforms Figma frames into semantic, predictable structures ready for handoff.
 
-## Idempotency (mandatory — read before anything else)
+## Idempotency (mandatory: read before anything else)
 
 This skill **only acts on gaps**. It never redoes what's already compliant. An already-hygienic frame should come out of a run practically untouched.
 
@@ -24,7 +24,7 @@ Before any mutation (renaming, creating a variable, adjusting layout), **diagnos
 
 Only operate where the diagnosis flags a real problem. This avoids the anti-pattern of "re-renaming differently on every run" (which breaks Code Connect) and of recreating tokens that already exist.
 
-The final report must separate **`already compliant`** (untouched) from **`fixed`** (what changed in this pass). If the frame was already 100% hygienic, the correct output is "no changes needed" + the updated Handoff Contract — not a replay of the entire process.
+The final report must separate **`already compliant`** (untouched) from **`fixed`** (what changed in this pass). If the frame was already 100% hygienic, the correct output is "no changes needed" + the updated Handoff Contract, not a replay of the entire process.
 
 ## Scope and boundaries (mandatory)
 
@@ -44,9 +44,9 @@ If the task requires implementation or final visual QA, explicitly hand off to t
 
 Given a frame selected in Figma, run **7 hygiene phases**:
 
-### Phase 1 — Structural reading
+### Phase 1: Structural reading
 Follow the official Figma MCP Server sequence (more efficient than reading everything at once):
-1. `get_design_context` on the selected root node — structured representation of the exact node
+1. `get_design_context` on the selected root node: structured representation of the exact node
 2. If the response is too large, `get_metadata` first (high-level view), then fetch only the needed node
 3. `get_screenshot` as a visual reference before proceeding
 
@@ -56,21 +56,21 @@ From this:
 - Find recurring primitives
 - Map composite patterns
 
-Layer names aren't just organization — they're a direct semantic signal to the MCP's LLM (the model uses the layer name to infer intent). This is why Phase 2 (renaming) matters.
+Layer names aren't just organization. They're a direct semantic signal to the MCP's LLM (the model uses the layer name to infer intent). This is why Phase 2 (renaming) matters.
 
-### Phase 2 — Naming hygiene
+### Phase 2: Naming hygiene
 Rename **only layers with generic names** (not ones already semantic):
 - ❌ `Frame 1`, `Group 12`, `Rectangle 4` → rename
 - ✅ `Page/Dashboard`, `FilterBar/Base`, `StatCard/Active` → **already compliant, don't touch**
 
-### Phase 3 — Taxonomy
+### Phase 3: Taxonomy
 Classify each part:
-- `primitive` — reusable base
-- `pattern` — recurring combination
-- `block` — product-specific block
-- `template` — final page composition
+- `primitive`: reusable base
+- `pattern`: recurring combination
+- `block`: product-specific block
+- `template`: final page composition
 
-### Phase 4 — Match with shadcn/ui
+### Phase 4: Match with shadcn/ui
 Map each pattern to the closest shadcn primitive:
 - Button → `Button`
 - Input → `Input`
@@ -88,7 +88,7 @@ Map each pattern to the closest shadcn primitive:
 **Golden rule:** map to the closest primitive, don't force-rename proprietary components that already have an established identity.
 Goal of this phase: structural and semantic compatibility, not final visual conformity.
 
-### Phase 5 — Variables and design tokens
+### Phase 5: Variables and design tokens
 Inspect and propose **only where missing** (raw value with no variable). Where a variable/token is already applied, don't recreate or duplicate it. Propose:
 - color variables
 - spacing variables
@@ -96,7 +96,7 @@ Inspect and propose **only where missing** (raw value with no variable). Where a
 - typography styles
 - semantic roles
 
-### Phase 6 — Auto layout and structure
+### Phase 6: Auto layout and structure
 Normalize:
 - direction
 - spacing
@@ -105,20 +105,20 @@ Normalize:
 - excessive nesting
 - constraints
 
-### Phase 7 — Output
+### Phase 7: Output
 
 Always deliver:
 
-1. **Diagnosis** — what was wrong
-2. **Structural map** — root, sections, patterns, primitives
-3. **Rename plan** — old name → new name
-4. **shadcn/ui mapping** — Figma layer → primitive
-5. **Gaps** — what needs to become a token or component
-6. **Next step** — clear recommendation
+1. **Diagnosis**: what was wrong
+2. **Structural map**: root, sections, patterns, primitives
+3. **Rename plan**: old name → new name
+4. **shadcn/ui mapping**: Figma layer → primitive
+5. **Gaps**: what needs to become a token or component
+6. **Next step**: clear recommendation
 
 ## `[GAP]` protocol (mandatory)
 
-Never invent a token, component, or mapping that doesn't actually exist. If a Figma pattern has no corresponding shadcn primitive, or a value has no semantic token, or Code Connect isn't configured — register an explicit **`[GAP]`** instead of assuming. An honest `[GAP]` is worth more than an invented mapping that breaks during implementation.
+Never invent a token, component, or mapping that doesn't actually exist. If a Figma pattern has no corresponding shadcn primitive, or a value has no semantic token, or Code Connect isn't configured, register an explicit **`[GAP]`** instead of assuming. An honest `[GAP]` is worth more than an invented mapping that breaks during implementation.
 
 ## Priorities
 
@@ -191,7 +191,7 @@ DIAGNOSIS
 [what was wrong and what was cleaned up]
 
 ALREADY COMPLIANT (untouched)
-- [layers/tokens that were already OK — confirm, don't redo]
+- [layers/tokens that were already OK, confirm, don't redo]
 
 FIXED (changed in this pass)
 - [what actually changed; if empty: "no changes needed"]
@@ -255,17 +255,17 @@ openStructuralIssues:
 
 Without this contract, consider the hygiene pass incomplete.
 
-**Confirmation gate:** present the Handoff Contract to the user and **wait for explicit confirmation** before forwarding to `figma-shadcn-visual-match`. Don't proceed to implementation with an unconfirmed contract — this is the point where the user corrects a wrong mapping or resolves a `[GAP]` before it becomes code.
+**Confirmation gate:** present the Handoff Contract to the user and **wait for explicit confirmation** before forwarding to `figma-shadcn-visual-match`. Don't proceed to implementation with an unconfirmed contract. This is the point where the user corrects a wrong mapping or resolves a `[GAP]` before it becomes code.
 
 ## Full workflow (Figma-only)
 
-1. **Read the hierarchy** — understand the current structure
-2. **Detect semantic regions** — identify pages, sections, patterns, primitives
-3. **Clean up naming** — rename everything semantically (Phase 2)
-4. **Classify taxonomy** — primitive, pattern, block, template (Phase 3)
-5. **Map to primitives** — connect each layer to the closest primitive (Phase 4)
-6. **List gaps** — identify what still needs design tokens or components (Phase 5)
-7. **Prepare structural handoff** — emit the contract for `figma-shadcn-visual-match` (Phase 6-7)
+1. **Read the hierarchy**: understand the current structure
+2. **Detect semantic regions**: identify pages, sections, patterns, primitives
+3. **Clean up naming**: rename everything semantically (Phase 2)
+4. **Classify taxonomy**: primitive, pattern, block, template (Phase 3)
+5. **Map to primitives**: connect each layer to the closest primitive (Phase 4)
+6. **List gaps**: identify what still needs design tokens or components (Phase 5)
+7. **Prepare structural handoff**: emit the contract for `figma-shadcn-visual-match` (Phase 6-7)
 
 ## Mental command
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# audit-refs.sh — Audits a project's documentation references
+# audit-refs.sh: Audits a project's documentation references
 # Usage: zsh <skill-dir>/scripts/audit-refs.sh [project-root]
 # Deps: zsh, grep, find, realpath (macOS default)
 
@@ -12,7 +12,7 @@ RED='\033[0;31m'; YEL='\033[0;33m'; GRN='\033[0;32m'; BLU='\033[0;34m'; RST='\03
 broken=0; orphan=0; missing_llms=0; stale=0; no_frontmatter=0; skill_sync=0; ok=0
 
 echo ""; echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  sync-references audit — $(date '+%Y-%m-%d %H:%M')"
+echo "  sync-references audit: $(date '+%Y-%m-%d %H:%M')"
 echo "  Root: $ROOT"; echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # ── 1. Collect .md files (excluding dot-dirs and legacy) ──────────────────────
@@ -26,7 +26,7 @@ while IFS= read -r -d '' f; do ALL_MD+=("$f"); done < <(
 
 echo ""; echo "${BLU}[1/6] Files found: ${#ALL_MD[@]}${RST}"
 
-# ── 2. Broken links — extract every local link target with grep ──────────────
+# ── 2. Broken links: extract every local link target with grep ──────────────
 echo ""; echo "${BLU}[2/6] Checking broken links...${RST}"
 
 for md in "${ALL_MD[@]}"; do
@@ -146,7 +146,7 @@ README_F="$ROOT/README.md"
 SKILLS_MD="$ROOT/SKILLS.md"
 
 if [[ -z "$SKILLS_DIR" ]]; then
-  echo "  ${GRN}✓ No skills directory found — skipping${RST}"
+  echo "  ${GRN}✓ No skills directory found: skipping${RST}"
 else
   skill_paths=()
   while IFS= read -r -d '' d; do
@@ -154,14 +154,14 @@ else
   done < <(find "$SKILLS_DIR" -mindepth 1 -maxdepth 1 -type d -print0 2>/dev/null)
 
   if [[ ${#skill_paths[@]} -eq 0 ]]; then
-    echo "  ${GRN}✓ No skills in $SKILLS_DIR — skipping${RST}"
+    echo "  ${GRN}✓ No skills in $SKILLS_DIR: skipping${RST}"
   else
     if [[ ! -f "$README_F" ]]; then
-      printf "  ${YEL}⚠ SKILL-SYNC-README${RST}  README.md not found — could not validate \\\`skill\\\` names in the table\n"
+      printf "  ${YEL}⚠ SKILL-SYNC-README${RST}  README.md not found: could not validate \\\`skill\\\` names in the table\n"
       ((skill_sync++)) || true
     fi
     if [[ ! -f "$SKILLS_MD" ]]; then
-      printf "  ${YEL}⚠ SKILL-SYNC-SKILLS${RST}  SKILLS.md not found — could not validate skill SKILL.md links\n"
+      printf "  ${YEL}⚠ SKILL-SYNC-SKILLS${RST}  SKILLS.md not found: could not validate skill SKILL.md links\n"
       ((skill_sync++)) || true
     fi
 
@@ -205,7 +205,7 @@ if [[ -d "$DOCS_DIR" ]]; then
   done < <(find "$DOCS_DIR" -name "*.md" ! -path "*/legacy/*" -print0)
   [[ $no_frontmatter -eq 0 ]] && echo "  ${GRN}✓ All files in docs/ have frontmatter${RST}"
 else
-  echo "  (no docs/ folder — skipping)"
+  echo "  (no docs/ folder: skipping)"
 fi
 
 # ── Summary ─────────────────────────────────────────────────────────────────
@@ -222,9 +222,9 @@ printf "  No frontmatter    : %d\n" $no_frontmatter
 printf "  Links OK          : %d\n" $ok
 echo ""
 if [[ $total -eq 0 ]]; then
-  echo "  ${GRN}✅ Clean documentation — no issues found${RST}"
+  echo "  ${GRN}✅ Clean documentation: no issues found${RST}"
 else
-  echo "  ${RED}⚠  $total issues found — review above${RST}"
+  echo "  ${RED}⚠  $total issues found: review above${RST}"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"; echo ""
 

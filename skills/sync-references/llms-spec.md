@@ -1,6 +1,6 @@
-# llms.txt — Reference Spec
+# llms.txt: Reference Spec
 
-> Based on the spec at [llmstxt.org](https://llmstxt.org). A structured LLM context file — analogous to `robots.txt` but for language models.
+> Based on the spec at [llmstxt.org](https://llmstxt.org). A structured LLM context file, analogous to `robots.txt` but for language models.
 
 ## Required structure
 
@@ -39,18 +39,18 @@
 
 Use semantic sections to make it easier for the model to read:
 
-- `## Essential context` — documents the model MUST always read
-- `## Code-generation specs` — contracts, APIs, schemas
-- `## Active subprojects` — sub-modules with their own README
-- `## Skills and automation` — skills, AGENTS.md, workflows
-- `## Tokens` — design tokens, constants, config variables
-- `## Optional` — history, legacy, supporting files
+- `## Essential context`: documents the model MUST always read
+- `## Code-generation specs`: contracts, APIs, schemas
+- `## Active subprojects`: sub-modules with their own README
+- `## Skills and automation`: skills, AGENTS.md, workflows
+- `## Tokens`: design tokens, constants, config variables
+- `## Optional`: history, legacy, supporting files
 
 ## What NOT to include in llms.txt
 
-- `CHANGELOG.md` — too long, wastes context unnecessarily
-- `CONTRIBUTING.md` — instructions for humans, not models
-- `legacy/` — unless explicitly referenced as historical reading
+- `CHANGELOG.md`: too long, wastes context unnecessarily
+- `CONTRIBUTING.md`: instructions for humans, not models
+- `legacy/`: unless explicitly referenced as historical reading
 - Binary files, images, token JSONs (unless critical)
 - Temporary or build files
 
