@@ -1,8 +1,10 @@
 # claude-skills
 
-Curated Claude Code skills and agents, generalized from personal/workspace use.
+I never accepted that designers don't build. These are skills and agents I actually use — in Claude Code, Codex, and whatever agent surface I'm on that day.
 
-All content in this repo is in English — it's meant to be usable by anyone, not tied to any single workspace or language.
+I'm Cosme Faé, a design engineer and agent architect ([hellofae.com](https://hellofae.com)). Most of my work now is agentic experience design: systems that decide, explain, and act on their own, and still need to feel trustworthy to the people depending on them. This repo holds the toolkit: a Figma-to-code pipeline, git discipline, doc hygiene, a couple of finance and career skills. Nothing here is theoretical. Everything shipped because I hit the same friction twice and got tired of solving it by hand.
+
+All content is in English — it's meant to be usable by anyone, not tied to any single workspace or language.
 
 Structure:
 - `skills/` — one folder per skill, each with `SKILL.md`
