@@ -2,7 +2,7 @@
 name: sync-references
 description: Audits, relinks, and synchronizes documentation references in a project; detecting broken links, stale paths, orphan files, llms.txt inconsistencies, skills-directory desync (skills folder vs README/SKILLS.md/llms.txt), READMEs, AGENTS.md, SKILL.md, HANDOFF.md, and CHANGELOG.md. Generates updated indexes and validates YAML frontmatter. Use when the user mentions "broken links", "relink docs", "update refs", "sync llms.txt", "index files", "document references", "tag files", "orphan files", "audit documentation", "validate llms.txt", or "sync skills".
 allowed-tools: Read, Grep, Glob, Write, Bash
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # sync-references

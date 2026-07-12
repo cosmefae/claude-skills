@@ -5,7 +5,7 @@ version: "2.0"
 language: en
 allowed-tools: [Bash, AskUserQuestion]
 tags: [git, workflow, pr, conventional-commits, admin-override]
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Skill: commit-guided

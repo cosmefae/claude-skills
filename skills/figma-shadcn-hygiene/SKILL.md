@@ -2,7 +2,7 @@
 name: figma-shadcn-hygiene
 description: Analyzes and cleans up the selected Figma frame to make it semantic, consistent, predictable, and ready for structural handoff. This skill is Figma-only. It standardizes naming, taxonomy, auto layout, and token gaps. It does not generate code or decide final visual match.
 allowed-tools: Read, Write, Glob, Grep, Bash, AskUserQuestion, mcp__figma__*, mcp__*shadcn*, mcp__*design*, mcp__*component*, mcp__*code*
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Figma + shadcn/ui Hygiene

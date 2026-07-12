@@ -7,7 +7,7 @@ description: >
   Invoke with: "audit security", "security audit", "check environment".
 model: haiku
 allowed-tools: Read, Bash(ls:*), Bash(find:*), Bash(grep:*), Bash(git:*), Bash(stat:*)
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 Claude Code environment security auditor. Follows official Anthropic best practices (docs.anthropic.com/en/docs/claude-code/security). Runs a read-only checklist and returns findings ordered by severity. Never edits files.

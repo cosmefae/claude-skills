@@ -1,7 +1,7 @@
 ---
 name: ai-daily-brief
 description: Generates a daily brief of the top AI-world news, deduped across a curated source list, with structured themed output.
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 Every morning, generate a daily brief of the top AI-world news.

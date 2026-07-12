@@ -35,10 +35,10 @@ Each skill/agent link in the tables below points straight to its folder, so you 
 
 ## Provenance
 
-Every `SKILL.md`/agent `.md` in this repo carries a `Provenance:` line in its frontmatter, one of:
-- `original: [cosmefae](https://hellofae.com)`: built from scratch for this repo
-- `adapted from a private workspace skill: [cosmefae](https://hellofae.com)`: generalized from a personal workspace skill (the case for everything currently in the repo)
-- `adapted from [@handle](url), used with permission: <restriction>`: reserved for skills sourced from a named third-party author under explicit permission/restriction
+Every `SKILL.md`/agent `.md` in this repo carries a `Provenance:` line in its frontmatter. The value is always quoted, since it contains its own colon:
+- `Provenance: "original: [cosmefae](https://hellofae.com)"`: built from scratch for this repo
+- `Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"`: generalized from a personal workspace skill (the case for everything currently in the repo)
+- `Provenance: "adapted from [@handle](url), used with permission: <restriction>"`: reserved for skills sourced from a named third-party author under explicit permission/restriction
 
 ## Skills
 

@@ -4,7 +4,7 @@ description: "Transforms any design input (Figma frame, screenshot, or text brie
 version: "1.0"
 allowed-tools: [Read, mcp__*]
 tags: [design-system, contract, pre-generation, consistency, figma]
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Skill: screen-contract

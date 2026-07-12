@@ -5,7 +5,7 @@ version: "1.0"
 language: en
 allowed-tools: [Read, Write, Glob, Grep, Bash]
 tags: [docs, standardization, anthropic, skills, markdown, audit]
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Skill: standardize-md-skills

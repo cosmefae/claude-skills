@@ -2,7 +2,7 @@
 name: career-boost
 description: Transforms resumes and professional profiles into maximum-impact documents, optimized for ATS and recruiters. Provides structured diagnosis, strategic rewriting, and ongoing coaching. Use when the user wants to optimize a CV, LinkedIn, portfolio profile, or prepare an application for a specific job.
 allowed-tools: Read, Glob, Bash, WebFetch, WebSearch
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Career Boost: Skill

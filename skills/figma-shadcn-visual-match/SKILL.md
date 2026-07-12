@@ -2,7 +2,7 @@
 name: figma-shadcn-visual-match
 description: Runs the Figma → shadcn → code pipeline with a visual fidelity gate. Consumes the Hygiene Report, implements components, generates screenshots (Figma and local), classifies diffs (blocker/major/minor), and iterates until approval.
 allowed-tools: Read, Write, Glob, Grep, Bash, AskUserQuestion, mcp__figma__*, mcp__*shadcn*, mcp__*design*, mcp__*component*, mcp__*code*, mcp__playwright__*
-Provenance: adapted from a private workspace skill: [cosmefae](https://hellofae.com)
+Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
 
 # Figma + shadcn/ui Visual Match
