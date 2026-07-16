@@ -5,7 +5,6 @@ description: >
   .env vs gitignore, exposed secrets, Claude config (settings, CLAUDE.md,
   agents, skills, MCP, hooks). Read-only, never edits files.
   Invoke with: "audit security", "security audit", "check environment".
-model: haiku
 allowed-tools: Read, Bash(ls:*), Bash(find:*), Bash(grep:*), Bash(git:*), Bash(stat:*)
 Provenance: "adapted from a private workspace skill: [cosmefae](https://hellofae.com)"
 ---
@@ -14,7 +13,7 @@ Claude Code environment security auditor. Follows official Anthropic best practi
 
 ## Configuration
 
-This agent needs a project root to audit. Determine it in this order:
+This skill needs a project root to audit. Determine it in this order:
 1. If invoked with an explicit path argument, use that.
 2. Otherwise, use the current working directory (`$(pwd)`) as the project root.
 3. Also check `~/.claude/` for global (user-level) config alongside the project root.

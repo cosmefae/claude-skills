@@ -54,9 +54,4 @@ Every `SKILL.md`/agent `.md` in this repo carries a `Provenance:` line in its fr
 | [`crisis-investing`](skills/crisis-investing) | Builds and scores investment strategies for global crisis scenarios (wars, pandemics, recessions, tail-risk events). |
 | [`standardize-md-skills`](skills/standardize-md-skills) | Audits and standardizes SKILL.md/project MD files against Anthropic conventions. Always scoped to an explicit target directory. |
 | [`ai-daily-brief`](skills/ai-daily-brief) | Generates a daily brief of top AI-world news, deduped across a curated, user-editable source list. |
-
-## Agents
-
-| Agent | Description |
-|---|---|
-| [`security-auditor`](agents/security-auditor.md) | Read-only security audit of a Claude Code environment: secrets, permissions, config hygiene. |
+| [`security-auditor`](skills/security-auditor) | Read-only security audit of a Claude Code environment: secrets, permissions, config hygiene. |
