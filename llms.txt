@@ -1,0 +1,26 @@
+# claude-skills
+
+> Agent Skills for Claude Code, Codex, and any agent surface that supports the Agent Skills spec. Built and used by Cosme Faé, a design engineer and agent architect, from real workspace friction — not written as demos.
+
+## Docs
+
+- [README](https://github.com/cosmefae/claude-skills/blob/master/README.md): overview, install methods, skill catalog, provenance model
+- [LICENSE](https://github.com/cosmefae/claude-skills/blob/master/LICENSE): MIT
+
+## Skills
+
+- [screen-contract](https://github.com/cosmefae/claude-skills/blob/master/skills/screen-contract): turns a Figma frame, screenshot, or brief into a structural JSON contract before code generation
+- [write-handoff](https://github.com/cosmefae/claude-skills/blob/master/skills/write-handoff): writes a concise HANDOFF.md for the current task
+- [commit-guided](https://github.com/cosmefae/claude-skills/blob/master/skills/commit-guided): guided git workflow — validate, commit with Conventional Commits, open a PR
+- [sync-references](https://github.com/cosmefae/claude-skills/blob/master/skills/sync-references): audits and syncs documentation references across a project
+- [figma-shadcn-hygiene](https://github.com/cosmefae/claude-skills/blob/master/skills/figma-shadcn-hygiene): Figma-only structural hygiene pass — naming, taxonomy, auto layout, token gaps
+- [figma-shadcn-visual-match](https://github.com/cosmefae/claude-skills/blob/master/skills/figma-shadcn-visual-match): Figma → shadcn → code with a visual fidelity gate
+- [career-boost](https://github.com/cosmefae/claude-skills/blob/master/skills/career-boost): resume/LinkedIn diagnosis and rewrite for ATS and recruiters
+- [crisis-investing](https://github.com/cosmefae/claude-skills/blob/master/skills/crisis-investing): builds and scores investment strategies for global crisis scenarios
+- [standardize-md-skills](https://github.com/cosmefae/claude-skills/blob/master/skills/standardize-md-skills): audits and standardizes SKILL.md/project MD files against Anthropic conventions
+- [ai-daily-brief](https://github.com/cosmefae/claude-skills/blob/master/skills/ai-daily-brief): generates a daily brief of top AI-world news
+- [security-auditor](https://github.com/cosmefae/claude-skills/blob/master/skills/security-auditor): read-only security audit of a Claude Code environment
+
+## Optional
+
+- [Marketplace catalog](https://github.com/cosmefae/claude-skills/blob/master/.claude-plugin/marketplace.json): machine-readable plugin index used by `/plugin marketplace add`

@@ -64,6 +64,7 @@ Each skill link in the table below points straight to its folder, so you can gra
 - `skills/`: one folder per skill, each with `SKILL.md`
 - `agents/`: one folder or file per agent definition
 - `.claude-plugin/marketplace.json`: plugin catalog
+- `llms.txt`: machine-readable index of this repo, for LLMs/agents
 - `LICENSE`: MIT
 
 ## Provenance
@@ -75,7 +76,7 @@ Every `SKILL.md`/agent `.md` in this repo carries a `Provenance:` line in its fr
 
 ## Contributing
 
-Found a rough edge, or built a skill that fits the same bar (real friction, actually used, provenance tagged)? Open an issue or PR.
+Found a rough edge, or built a skill that fits the same bar (real friction, actually used, provenance tagged)? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
@@ -84,3 +85,5 @@ Found a rough edge, or built a skill that fits the same bar (real friction, actu
 ---
 
 If this saved you the trouble of writing one of these yourself, a star helps others find it.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=cosmefae/claude-skills&type=Date)](https://star-history.com/#cosmefae/claude-skills&Date)
